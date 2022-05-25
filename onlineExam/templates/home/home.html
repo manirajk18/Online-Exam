@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load home_tags_filters %}
+{% get_date as today %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/homestyle.css' %}">
+</head>
+<body>
+    <div><a href="http://localhost:8000/examiner/examiner-login/">Examiner Page</a></div>
+    <div><a href="http://localhost:8000/examinee/examinee-login/">Examinee Page</a></div>
+    <h1>This is home page</h1>
+    <h3>{{today}}</h3>
+</body>
+</html>

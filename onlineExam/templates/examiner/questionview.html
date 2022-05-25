@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question View Page</title>
+</head>
+<body>
+    <div><a href="http://localhost:8000/">homepage</a></div>
+    <div><a href="http://localhost:8000/examinee/examinee-login/">examinee</a></div>
+    <div><a href="http://localhost:8000/examiner/set-question/">set question</a></div>
+    <div><a href="http://localhost:8000/examiner/logout/">logout</a></div>
+    <div>
+        <table>
+            <tr>
+                <th>Q no</th>
+                <th>Question</th>
+                <th>option a</th>
+                <th>option b</th>
+                <th>option c</th>
+                <th>option d</th>
+                <th>marks</th>
+            </tr>
+            {% for q in Questions %}
+            <tr>
+                <td>{{q.qno}}</td>
+                <td>{{q.que}}</td>
+                <td>{{q.a}}</td>
+                <td>{{q.b}}</td>
+                <td>{{q.c}}</td>
+                <td>{{q.d}}</td>
+                <td>{{q.mark}}</td>
+                <td><a href="http://localhost:8000/examiner/update-question?id={{q.qno}}">update</a></td>
+                <td><a href="http://localhost:8000/examiner/delete-question?id={{q.qno}}">delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

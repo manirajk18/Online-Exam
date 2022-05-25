@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Question</title>
+</head>
+<body>
+
+    <div><a href="http://localhost:8000/">homepage</a></div>
+    <div><a href="http://localhost:8000/examinee/examinee-login/">examinee</a></div>
+    <div><a href="http://localhost:8000/examiner/set-question/">set question</a></div>
+    <div><a href="http://localhost:8000/examiner/question-view/">view question</a></div>
+    <div><a href="http://localhost:8000/examiner/logout/">logout</a></div>
+    <div>
+        <h1>Update Question</h1>
+        <form action="http://localhost:8000/examiner/updation/" method="post">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Q no</td>
+                    <td><input type="text"  name="qno" value="{{Que.qno}}" readonly></td>
+                </tr>
+                <tr>
+                    <td>Question</td>
+                    <td><input type="text" name="que" value="{{Que.que}}"></td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td><input type="text" name="a" value="{{Que.a}}"></td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td><input type="text" name="b" value="{{Que.b}}"></td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td><input type="text" name="c" value="{{Que.c}}"></td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td><input type="text" name="d" value="{{Que.d}}"></td>
+                </tr>
+                <tr>
+                    <td>Mark</td>
+                    <td><input type="text" name="mark" value="{{Que.mark}}"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="Update"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

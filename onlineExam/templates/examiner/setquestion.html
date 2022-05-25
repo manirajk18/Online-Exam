@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Questions</title>
+</head>
+<body>
+    <div><h1>Welcome {{User}}</h1></div>
+    <div><h3>Set the question paper for test</h3></div>
+    <div>
+        <form action="http://localhost:8000/examiner/save-question/" method="post">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Qno</td>
+                    <td><input type="text" name="qn"></td>
+                </tr>
+                <tr>
+                    <td>Question</td>
+                    <td><input type="text" name="question"></td>
+                </tr>
+                <tr>
+                    <td>Option A</td>
+                    <td><input type="text" name="A"></td>
+                </tr>
+                <tr>
+                    <td>Option B</td>
+                    <td><input type="text" name="B"></td>
+                </tr>
+                <tr>
+                    <td>Option C</td>
+                    <td><input type="text" name="C"></td>
+                </tr>
+                <tr>
+                    <td>Option D</td>
+                    <td><input type="text" name="D"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Save"></td>
+                </tr>
+            </table>
+        </form>
+        <div><a href="http://localhost:8000/examiner/set-question/">add more question</a></div>
+    </div>
+</body>
+</html>
